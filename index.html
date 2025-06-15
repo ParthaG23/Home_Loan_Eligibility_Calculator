@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan Eligibility Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- google poppins font
+      -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Home Loan Eligibility Calculator</h1>
+            <p>Calculate your home loan eligibility based on your income and financial profile</p>
+        </div>
+
+        <div class="calculator-container">
+            <!-- Input Form -->
+            <div class="card">
+                <div class="card-title">
+                     Financial Details
+                </div>
+
+                <div class="form-group">
+                    <label for="employmentType">Employment Type</label>
+                    <select id="employmentType">
+                        <option value="salaried">Salaried Employee</option>
+                        <option value="self-employed">Self Employed</option>
+                        <option value="business">Business Owner</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="monthlyIncome">Monthly Gross Income (₹)</label>
+                    <input type="number" id="monthlyIncome" placeholder="e.g., 50000" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalIncome">Additional Monthly Income (₹)</label>
+                    <input type="number" id="additionalIncome" placeholder="Rental, investment income etc." min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="monthlyExpenses">Monthly Living Expenses (₹)</label>
+                    <input type="number" id="monthlyExpenses" placeholder="e.g., 20000" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="existingEmis">Existing EMIs (₹)</label>
+                    <input type="number" id="existingEmis" placeholder="Current loan EMIs" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicantAge">Applicant Age</label>
+                    <input type="number" id="applicantAge" placeholder="e.g., 30" min="18" max="65">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate (%)</label>
+                        <input type="number" id="interestRate" value="8.50" step="0.25" min="6" max="15">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTenure">Loan Tenure (Years)</label>
+                        <select id="loanTenure">
+                            <option value="5">5 Years</option>
+                            <option value="10">10 Years</option>
+                            <option value="15">15 Years</option>
+                            <option value="20" selected>20 Years</option>
+                            <option value="25">25 Years</option>
+                            <option value="30">30 Years</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="card">
+                <div class="result-main">
+                    <h3>Eligible Loan Amount</h3>
+                    <div class="result-amount" id="eligibleAmount">₹0</div>
+                    <p class="result-subtitle">Maximum loan you can get</p>
+                </div>
+
+                <div class="mini-results">
+                    <div class="mini-card">
+                        <h4>Maximum EMI</h4>
+                        <div class="mini-value" id="maxEmi">₹0</div>
+                    </div>
+                    <div class="mini-card">
+                        <h4>FOIR Ratio</h4>
+                        <div class="mini-value" id="foirRatio">0%</div>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Financial Summary</h3>
+                    <div class="summary-row">
+                        <span>Total Monthly Income</span>
+                        <strong id="totalIncome">₹0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Monthly Obligations</span>
+                        <strong id="totalObligations">₹0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Net Disposable Income</span>
+                        <strong id="disposableIncome">₹0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Loan Eligibility Status</span>
+                        <strong id="eligibilityStatus" class="status-good">Good</strong>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>Tips to Improve Eligibility</h3>
+                    <ul class="tips-list">
+                        <li>Maintain credit score above 750</li>
+                        <li>Reduce existing debt obligations</li>
+                        <li>Consider adding a co-applicant</li>
+                        <li>Increase down payment amount</li>
+                        <li>Choose optimal loan tenure</li>
+                        <li>Show consistent income history</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This calculator provides an estimate based on standard lending criteria. 
+            Actual loan approval depends on various factors including credit score, property valuation, 
+            bank policies, and documentation. Please consult with financial institutions for accurate assessment.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
